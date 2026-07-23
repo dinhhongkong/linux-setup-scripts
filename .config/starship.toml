@@ -1,0 +1,169 @@
+"$schema" = "https://starship.rs/config-schema.json"
+
+add_newline = false
+palette = "catppuccin_mocha"
+
+format = """
+[](surface0)\
+$os\
+$username\
+[](bg:blue fg:surface0)\
+$directory\
+[](fg:blue bg:green)\
+$git_branch\
+$git_status\
+[](fg:green bg:surface1)\
+$c\
+$cpp\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$python\
+$docker_context\
+[](fg:surface1 bg:surface0)\
+$cmd_duration\
+[](fg:surface0)\
+$line_break\
+$character"""
+
+[os]
+disabled = false
+style = "bg:surface0 fg:text"
+
+[os.symbols]
+Ubuntu = "󰕈 "
+Linux = "󰌽 "
+Debian = "󰣚 "
+Arch = "󰣇 "
+Fedora = "󰣛 "
+
+[username]
+show_always = true
+style_user = "bg:surface0 fg:text"
+style_root = "bg:surface0 fg:red"
+format = "[$user ]($style)"
+
+[directory]
+style = "bg:blue fg:crust"
+format = "[ 󰉋 $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+home_symbol = "~"
+
+[directory.substitutions]
+Documents = "󰈙 "
+Downloads = " "
+Music = "󰝚 "
+Pictures = " "
+Projects = "󰲋 "
+
+[git_branch]
+symbol = " "
+style = "bg:green fg:crust"
+format = "[ $symbol$branch ]($style)"
+
+[git_status]
+style = "bg:green fg:crust"
+format = "[$all_status$ahead_behind ]($style)"
+conflicted = " "
+ahead = "⇡${count} "
+behind = "⇣${count} "
+diverged = "⇕⇡${ahead_count}⇣${behind_count} "
+untracked = "?${count} "
+stashed = "󰏗 "
+modified = "!${count} "
+staged = "+${count} "
+renamed = "»${count} "
+deleted = "✘${count} "
+
+[nodejs]
+symbol = " "
+style = "bg:surface1 fg:green"
+format = "[ $symbol($version) ]($style)"
+
+[python]
+symbol = " "
+style = "bg:surface1 fg:yellow"
+format = "[ $symbol$pyenv_prefix($version)( \\($virtualenv\\)) ]($style)"
+
+[rust]
+symbol = " "
+style = "bg:surface1 fg:peach"
+format = "[ $symbol($version) ]($style)"
+
+[golang]
+symbol = " "
+style = "bg:surface1 fg:sky"
+format = "[ $symbol($version) ]($style)"
+
+[c]
+symbol = " "
+style = "bg:surface1 fg:blue"
+format = "[ $symbol($version) ]($style)"
+
+[cpp]
+symbol = " "
+style = "bg:surface1 fg:blue"
+format = "[ $symbol($version) ]($style)"
+
+[java]
+symbol = " "
+style = "bg:surface1 fg:red"
+format = "[ $symbol($version) ]($style)"
+
+[kotlin]
+symbol = " "
+style = "bg:surface1 fg:mauve"
+format = "[ $symbol($version) ]($style)"
+
+[php]
+symbol = " "
+style = "bg:surface1 fg:mauve"
+format = "[ $symbol($version) ]($style)"
+
+[docker_context]
+symbol = " "
+style = "bg:surface1 fg:blue"
+format = "[ $symbol$context ]($style)"
+only_with_files = true
+
+[cmd_duration]
+min_time = 1000
+style = "bg:surface0 fg:yellow"
+format = "[  $duration ]($style)"
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold green)"
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
