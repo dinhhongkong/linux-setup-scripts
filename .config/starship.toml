@@ -26,7 +26,6 @@ $docker_context\
 [](fg:surface1 bg:surface0)\
 $cmd_duration\
 [](fg:surface0)\
-$line_break\
 $character"""
 
 [os]
